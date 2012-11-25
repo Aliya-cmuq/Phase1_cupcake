@@ -15,5 +15,6 @@ class CustomerCupcake < ActiveRecord::Base
    scope :alphabetical, order('name')
    scope :for_user, lambda{|customer_id| where('id = ?', customer_id)}
    # scope :latest, lambda{|num| limit(num).order('visit_date DESC')} 
-  
+
+
 end

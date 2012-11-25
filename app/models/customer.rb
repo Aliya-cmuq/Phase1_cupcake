@@ -9,6 +9,10 @@ class Customer < ActiveRecord::Base
   validates_format_of :email, :with => /^[\w]([^@\s,:]+)@(([\w_]+\.)(com|edu|org|net|gov|mil|biz|info))$/i, :message => "is not a valid email adress"
   has_many :customer_cupcakes
   
+  scope :alphabetical, order('firstName')
+  def proper_name
+	firstName + " " + lastName
+	end
   private
   def formate_phone
   	phone = self.phone.to_s
@@ -17,4 +21,8 @@ class Customer < ActiveRecord::Base
   	#\ refers to regular expression
   	self.phone = phone
   end
+  
+
+
+  
 end
