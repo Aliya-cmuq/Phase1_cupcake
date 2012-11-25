@@ -1,0 +1,2 @@
+module CustomerCupcakesHelper
+end

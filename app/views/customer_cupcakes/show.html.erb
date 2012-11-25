@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @customer_cupcake.name %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @customer_cupcake.size %>
+</p>
+
+<p>
+  <b>Flavor:</b>
+  <%= @customer_cupcake.flavor %>
+</p>
+
+<p>
+  <b>Icing:</b>
+  <%= @customer_cupcake.icing %>
+</p>
+
+<p>
+  <b>Additional topping:</b>
+  <%= @customer_cupcake.additional_topping %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_cupcake_path(@customer_cupcake) %> |
+<%= link_to 'Back', customer_cupcakes_path %>

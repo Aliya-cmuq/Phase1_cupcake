@@ -1,0 +1,37 @@
+<%= form_for(@customer_cupcake) do |f| %>
+  <% if @customer_cupcake.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer_cupcake.errors.count, "error") %> prohibited this customer_cupcake from being saved:</h2>
+
+      <ul>
+      <% @customer_cupcake.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br />
+    <%= f.select :size, CustomerCupcake::SIZES %>
+  </div>
+  <div class="field">
+    <%= f.label :flavor %><br />
+    <%= f.select :flavor, CustomerCupcake::FLAVORS%>
+  </div>
+  <div class="field">
+    <%= f.label :icing %><br />
+    <%= f.select :icing, CustomerCupcake::ICINGS%>
+  </div>
+  <div class="field">
+    <%= f.label :additional_topping %><br />
+    <%= f.text_field :additional_topping %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
