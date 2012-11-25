@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cake</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+	<title>Cake</title>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= javascript_include_tag "style" %>
   <%= csrf_meta_tags %>
+<%= render 'partials/header' %>
+<div id ="left_column">
+<ul>
+<li> <%= link_to "Add a CupCake !", customer_cupcakes_path %></li>
+
+
+
+</ul>
+</div>
 </head>
 <body>
-
+<div id= "right_column">
 <%= yield %>
+</div>
+
 
 </body>
+<%= render 'partials/footer' %>
+<%=	render 'layouts/cupcake_pics' %>
 </html>
