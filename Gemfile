@@ -47,6 +47,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+  gem 'factory_girl_rails'
+
 group :test do
   gem 'factory_girl_rails'
   gem 'cucumber-rails'

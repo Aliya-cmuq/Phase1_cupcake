@@ -74,10 +74,12 @@ require 'factory_girl'
 	it "should return the names in alphabetical order" do  # This doesn't work yet as the create method saves attributes as nil
 		Customer.alphabetical.map{|o| o.firstName}.should == ["Aliya", "Asma"]
 	end
-  end
-	it "should return the proper name as first_name last_name" do # This doesn't work yet as the create method saves attributes as nil
+		it "should return the proper name as first_name last_name" do # This doesn't work yet as the create method saves attributes as nil
 		@asma.proper_name.should == "Asma Al-kubaisi"
 	end
+	
+  end
+
   #end -- added by asma
     end
 
