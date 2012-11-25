@@ -61,7 +61,7 @@ require 'factory_girl'
 		:flavor => "Chocolate", :icing => "Chocolate", :customer_id => @aliya)  
 		@vanillaRainbow = FactoryGirl.create(:customer_cupcake, :customer_id => @asma)
 	end
-	
+
 	it "created the factory object correctly" do # This doesn't work yet as the create method saves attributes as nil
 		@choco.should be_valid
 		@vanillaRainbow.should be_valid
@@ -70,14 +70,18 @@ require 'factory_girl'
 		@choco.icing.should == "Chocolate"
 		@choco.customer_id.should == @aliya #check this 
 	end	
+	
 	it "should return the names in alphabetical order" do  # This doesn't work yet as the create method saves attributes as nil
 		CustomerCupcake.alphabetical.map{|o| o.name}.should == ["Aliya", "Chocolate Cup Cake"]
 	end
-  end
-  it "should find all cupcakes for a given customer" do  # This doesn't work yet as the create method saves attributes as nil
-	CustomerCupcake.for_user(1).map{|o| o.name}.should == ["Aliya"]
-  end
+	
+		 it "should find all cupcakes for a given customer" do  # This doesn't work yet as the create method saves attributes as nil
+	CustomerCupcake.for_user(1).map{|o| o.name}.should == ["Chocolate Cup Cake"]
+	end
+	
   #Asma: "latest(receives number)" validation is not added as we don't have a date attribute to begin with
   #end -- added by asma
+
 	
+  end	
 end
