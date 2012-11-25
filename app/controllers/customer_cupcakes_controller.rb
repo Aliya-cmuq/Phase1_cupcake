@@ -44,7 +44,7 @@ class CustomerCupcakesController < ApplicationController
 
     respond_to do |format|
       if @customer_cupcake.save
-        format.html { redirect_to @customer_cupcake, notice: 'Customer cupcake was successfully created.' }
+        format.html { redirect_to @customer_cupcake, notice: "#{@customer_cupcake.name} was successfully created." }
         format.json { render json: @customer_cupcake, status: :created, location: @customer_cupcake }
       else
         format.html { render action: "new" }
