@@ -53,7 +53,7 @@ Scenario: creating a customer
 	Given I follow the new customer path
 	When I enter "Asma" in 'Firstname' 
 	And I enter "Al-kubaisi" in 'Lastname'
-	And I enter "POOBox 12345" in 'Address'
+	And I enter "PO Box 12345" in 'Address'
 	And I enter "aliya@aliya.com" in 'Email'
 	And I enter "97444667532" in 'Phone'
 	And I click on "Create Customer"
@@ -75,15 +75,15 @@ Scenario: delete customer
 
 Scenario: edit cupcake
 	Given I go to the cupcakes page
-	When I follow the "Edit" link for "batata"
-	And I change the name "batata" to "batataa"
+	When I follow the "Edit" link for "Chocolate Cup Cake"
+	And I change the name "Chocolate Cup Cake" to "Chocolate"
 	And I click the button "Update Customer cupcake"
-	Then in the "header", I should see "Customer cupcake was successfully updated."
+	Then I should get "Chocolate was successfully updated."
 
 Scenario: delete cupcake
 	Given I am in the cupcakes page
-	When I follow the "Destroy" link for "batata"
-	Then I should not see "batata"
+	When I follow the "Destroy" link for "Chocolate Cup Cake"
+	Then I should not see "Chocolate Cup Cake"
 
 	
 Scenario: creating a customer cupcake

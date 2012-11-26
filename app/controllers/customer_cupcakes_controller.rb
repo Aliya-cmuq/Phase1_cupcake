@@ -60,7 +60,7 @@ class CustomerCupcakesController < ApplicationController
 
     respond_to do |format|
       if @customer_cupcake.update_attributes(params[:customer_cupcake])
-        format.html { redirect_to @customer_cupcake, notice: 'Customer cupcake was successfully updated.' }
+        format.html { redirect_to @customer_cupcake, notice: "#{@customer_cupcake.name} was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
