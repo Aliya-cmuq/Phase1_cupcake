@@ -77,6 +77,7 @@ Scenario: edit cupcake
 	Given I go to the cupcakes page
 	When I follow the "Edit" link for "Chocolate Cup Cake"
 	And I change the name "Chocolate Cup Cake" to "Chocolate"
+	And I change the customer_id "1" to "2"
 	And I click the button "Update Customer cupcake"
 	Then I should get "Chocolate was successfully updated."
 
@@ -93,6 +94,7 @@ Scenario: creating a customer cupcake
 	And I select "Red Velvet" in 'Flavor'
 	And I select "Cream Cheese" in 'Icing'
 	And I enter "anything" in 'Additional topping'
+	And I enter "1" in 'customer_id'
 	And I click on "Create Customer cupcake"
 	Then I should be seeing "batata was successfully created."
 
