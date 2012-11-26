@@ -2,7 +2,7 @@ Given /^I created a customer and customer_cupcake$/ do
 	@aliya = FactoryGirl.create(:customer) 
 	@asma = FactoryGirl.create(:customer, :firstName => "Asma", :lastName => "Al-kubaisi", 
 	:phone => "97444988831", :email => "asma@asma.com", :address => "PO BOX 128765")
-	@choco = FactoryGirl.create(:customer_cupcake, :name => "Chocolate Cup Cake",
+	@choco = FactoryGirl.create(:customer_cupcake, :name => "batata",
 	:flavor => "Chocolate", :icing => "Chocolate", :customer_id => @aliya)  
 	@vanillaRainbow = FactoryGirl.create(:customer_cupcake, :customer_id => @asma)	
 end
@@ -116,8 +116,8 @@ Given /^I go to the customers page$/ do
   visit customers_path # express the regexp above with the code you wish you had
 end
 
-When /^I change the name "(.*?)" to "(.*?)"$/ do |arg1, arg2|
-  fill_in "name", :with => arg2 # express the regexp above with the code you wish you had
+When /^I change the customer_cupcake_name "(.*?)" to "(.*?)"$/ do |arg1, arg2|
+  fill_in "customer_cupcake_name", :with => arg2 # express the regexp above with the code you wish you had
 end
 
 # cupcake: new update delete

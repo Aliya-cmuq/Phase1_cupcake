@@ -76,9 +76,9 @@ Scenario: delete customer
 Scenario: edit cupcake
 	Given I go to the cupcakes page
 	When I follow the "Edit" link for "batata"
-	And I change the name "batata" to "batataa"
+	And I change the customer_cupcake_name "batata" to "batataa"
 	And I click the button "Update Customer cupcake"
-	Then in the "header", I should see "Customer cupcake was successfully updated."
+	Then in the "p#notice", I should see "Customer cupcake was successfully updated."
 
 Scenario: delete cupcake
 	Given I am in the cupcakes page
