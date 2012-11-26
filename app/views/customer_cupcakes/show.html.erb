@@ -25,6 +25,10 @@
   <%= @customer_cupcake.additional_topping %>
 </p>
 
+<p>
+  <b>Customer:</b>
+  <%= @customer_cupcake.customer_id %>
+</p>
 
 <%= link_to 'Edit', edit_customer_cupcake_path(@customer_cupcake) %> |
 <%= link_to 'Back', customer_cupcakes_path %>
