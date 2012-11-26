@@ -43,9 +43,10 @@ end
 # Customer: new update delete
 
 When /^I follow the create path$/ do
-  visit new_customer_path # express the regexp above with the code you wish you had
+  visit new_customer_path
 end
 
+<<<<<<< HEAD
 #When /^I follow the update path$/ do
 #  visit  edit_customer_path# express the regexp above with the code you #wish you had
 #end
@@ -53,14 +54,23 @@ end
 #When /^I follow the delete path$/ do
 #  visit customer_path # express the regexp above with the code you wish #you had
 #end
+=======
+When /^I follow the update path$/ do
+  visit  edit_customer_path
+end
+
+When /^I follow the delete path$/ do
+  visit customer_path
+end
+>>>>>>> FinalCucumber
 
 
 Then /^I should be seeing "(.*?)" as the heading$/ do |arg1|
-  page.should have_content arg1 # express the regexp above with the code you wish you had
+  page.should have_content arg1
 end
 
 Given /^I am in the customers page$/ do
-  visit customers_path # express the regexp above with the code you wish you had
+  visit customers_path
 end
 
 When /^I follow the "(.*?)" link for "(.*?)"$/ do |link, cell_value|
@@ -74,7 +84,7 @@ end
 
 
 When /^I follow the cupcake create path$/ do
-  visit new_customer_cupcake_path # express the regexp above with the code you wish you had
+  visit new_customer_cupcake_path
 end
 
 Given /^I follow the new customer path$/ do
@@ -112,15 +122,15 @@ end
 
 
 Given /^I am in the cupcakes page$/ do
-  visit customer_cupcakes_path # express the regexp above with the code you wish you had
+  visit customer_cupcakes_path
 end
 
 Given /^I go to the customers page$/ do
-  visit customers_path # express the regexp above with the code you wish you had
+  visit customers_path
 end
 
 When /^I change the name "(.*?)" to "(.*?)"$/ do |arg1, arg2|
-  fill_in "name", :with => arg2 # express the regexp above with the code you wish you had
+  fill_in "customer_cupcake_name", :with => arg2 
 end
 
 # cupcake: new update delete
@@ -150,7 +160,7 @@ end
 
 
 Given /^I go to the cupcakes page$/ do
-  visit customer_cupcakes_path # express the regexp above with the code you wish you had
+  visit customer_cupcakes_path
 end
 
 When /^I change the email address "(.*?)" to "(.*?)"$/ do |arg1, arg2|
@@ -158,15 +168,15 @@ When /^I change the email address "(.*?)" to "(.*?)"$/ do |arg1, arg2|
 end
 
 When /^I click the button "(.*?)"$/ do |arg1|
-  click_button arg1 # express the regexp above with the code you wish you had
+  click_button arg1 
 end
 
-Then /^in the "(.*?)", I should see "(.*?)"$/ do |arg1, arg2|
-  page.should have_css(arg1, :text => arg2) # express the regexp above with the code you wish you had
+Then /^I should get "(.*?)"$/ do |updated|
+  page.should have_content(updated) 
 end
 
 Then /^in the page I should see "(.*?)"$/ do |updated|
-  page.should have_content(updated) # express the regexp above with the code you wish you had
+  page.should have_content(updated) 
 end
 
 # When /^I follow the create path$/ do
