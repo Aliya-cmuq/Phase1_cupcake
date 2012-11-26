@@ -1,9 +1,12 @@
 Given /^I created a customer and customer_cupcake$/ do
 	@aliya = FactoryGirl.create(:customer) 
+
 	@asma = FactoryGirl.create(:customer, :firstName => "Asma", :lastName => "Al-kubaisi", 
 	:phone => "97444988831", :email => "asma@asma.com", :address => "PO BOX 128765")
+
 	@choco = FactoryGirl.create(:customer_cupcake, :name => "Chocolate Cup Cake",
 	:flavor => "Chocolate", :icing => "Chocolate", :customer_id => @aliya)  
+
 	@vanillaRainbow = FactoryGirl.create(:customer_cupcake, :customer_id => @asma)	
 end
 
@@ -43,13 +46,13 @@ When /^I follow the create path$/ do
   visit new_customer_path # express the regexp above with the code you wish you had
 end
 
-When /^I follow the update path$/ do
-  visit  edit_customer_path# express the regexp above with the code you wish you had
-end
+#When /^I follow the update path$/ do
+#  visit  edit_customer_path# express the regexp above with the code you #wish you had
+#end
 
-When /^I follow the delete path$/ do
-  visit customer_path # express the regexp above with the code you wish you had
-end
+#When /^I follow the delete path$/ do
+#  visit customer_path # express the regexp above with the code you wish #you had
+#end
 
 
 Then /^I should be seeing "(.*?)" as the heading$/ do |arg1|
@@ -66,7 +69,7 @@ When /^I follow the "(.*?)" link for "(.*?)"$/ do |link, cell_value|
     #  find('th', :text => link).click
     #end
   #end
-  find(:xpath, "//tr[contains(.,'#{cell_value}')]").click_link link # express the regexp above with the code you wish you had
+  find(:xpath, "//tr[contains(.,'#{cell_value}')]").click_link link
 end
 
 
