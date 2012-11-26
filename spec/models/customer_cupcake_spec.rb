@@ -12,6 +12,7 @@ require 'factory_girl'
     end
     describe "Chack the validation" do
       it {should validate_presence_of(:name)}
+      it {should validate_presence_of(:customer_id)}
     end
     describe "Flavors validation" do  
       describe "Validate good flavor"do

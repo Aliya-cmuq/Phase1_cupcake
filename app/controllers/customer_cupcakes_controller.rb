@@ -25,7 +25,6 @@ class CustomerCupcakesController < ApplicationController
   # GET /customer_cupcakes/new.json
   def new
     @customer_cupcake = CustomerCupcake.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @customer_cupcake }
